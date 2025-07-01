@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="form-container">
+    <div class="header">
+        <h2>User Form</h2>
+    </div>
+    <form th:action="@{/users}" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <label>Name: <input type="text" th:field="*{name}"/></label><br/>
+        <label>Surname: <input type="text" th:field="*{surname}"/></label><br/>
+        <label>Email: <input type="email" th:field="*{email}"/></label><br/>
+        <label>Phone: <input type="text" th:field="*{phone}"/></label><br/>
+        <label>City: <input type="text" th:field="*{city}"/></label><br/>
+        <label>Country: <input type="text" th:field="*{country}"/></label><br/>
+        <input type="submit" value="Save"/>
+    </form>
+    <div class="link-container">
+        <a th:href="@{/users}">Back to list</a>
+    </div>
+</div>
+</body>
+</html>
